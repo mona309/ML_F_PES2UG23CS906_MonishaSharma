@@ -12,7 +12,8 @@ def get_entropy_of_dataset(tensor: torch.Tensor):
     Returns:
         float: Entropy of the dataset.
     """
-    target_col = tensor[:, -1]   # last column is target
+    # PES2UG23CS906
+    target_col = tensor[:, -1] 
     classes, counts = torch.unique(target_col, return_counts=True)
     probs = counts.float() / target_col.shape[0]
 
@@ -32,6 +33,7 @@ def get_avg_info_of_attribute(tensor: torch.Tensor, attribute: int):
     Returns:
         float: Average information of the attribute.
     """
+    # PES2UG23CS906
     total_len = tensor.shape[0]
     values, counts = torch.unique(tensor[:, attribute], return_counts=True)
 
@@ -56,6 +58,7 @@ def get_information_gain(tensor: torch.Tensor, attribute: int):
     Returns:
         float: Information gain for the attribute (rounded to 4 decimals).
     """
+    # PES2UG23CS906
     dataset_entropy = get_entropy_of_dataset(tensor)
     avg_info = get_avg_info_of_attribute(tensor, attribute)
 
@@ -79,12 +82,12 @@ def get_selected_attribute(tensor: torch.Tensor):
     Returns:
         tuple: (dict of attribute:index -> information gain, index of best attribute)
     """
-    n_attributes = tensor.shape[1] - 1  # exclude target
+    # PES2UG23CS906
+    n_attributes = tensor.shape[1] - 1 
     info_gains = {}
 
     for attr in range(n_attributes):
         info_gains[attr] = get_information_gain(tensor, attr)
 
-    # find attribute with max info gain
     best_attr = max(info_gains, key=info_gains.get)
     return (info_gains, best_attr)
