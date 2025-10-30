@@ -78,5 +78,20 @@ To implement and compare probabilistic text classifiers —
 
 ---
 
-## 📁 Repository Structure
+## 🧩 Future Enhancements
+- Integration of **deep learning models** (e.g., BERT, CNNs for text classification)
+- Automated **report generation pipeline** using Python
+- Comparison across more **ensemble strategies** (Stacking, Blending)
+
+---
+
+## 📬 Contact
+For queries or collaborations:  
+📧 **monishasharma134@gmail.com**  
+🔗 [GitHub Profile](https://github.com/mona309)
+
+---
+
+> “In God we trust. All others must bring data.” — W. Edwards Deming
+
 
